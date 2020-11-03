@@ -45,14 +45,14 @@ ul {
 }
 
 li{
-  padding: 5px;
+  padding: 10px;
   margin:auto;
 }
 
 li>a{
     text-decoration: none;
     color:#ccc;
-    font-size: 13px;
+    font-size: 15px;
 }
 </style>
 

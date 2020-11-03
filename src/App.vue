@@ -4,7 +4,7 @@
     <div class="main">
       <PostList/>
       </div>
-    <router-view/>
+    <router-view name="main"></router-view>
   </div>
 </template>
 
@@ -20,10 +20,15 @@ export default {
 }
 </script>
 
-<style>
+<style >
 .main {
-  max-width: 80%;
-  margin: 0 auto;
-  border: 1px solid;
+  max-width: 75%;
+  height: 100vh;
+  margin: 10px auto;
+  
 }
+#app{
+  background:#e1e1e1 ;
+}
+
 </style>
