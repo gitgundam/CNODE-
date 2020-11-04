@@ -1,26 +1,37 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Postlist from '@/components/Postlist.vue'
-import Article from '@/components/Article.vue'
+import PostList from '@/components/PostList'
+import Article from '@/components/Article'
+import UserInfo from '@/components/UserInfo'
+
 
 Vue.use(Router)
+
+
 
 export default new Router({
   routes: [
     {
-      name:'index',
-      path:'/',
-      components:{
-        Postlist
+      name:'PostList',
+      path:'',
+      components: {
+        main: PostList
       }
-      
     },
     {
-      name:'post_content',
+      name: 'Article',
       path:'/topic/:id',
-      components:{
-        main:Article
+      components: {
+        main: Article
+      }
+    },
+    {
+      name: 'UserInfo',
+      path:'/UserInfo/:userid',
+      components: {
+        main: UserInfo
       }
     }
-  ]
+  ],
+  mode:'history'
 })

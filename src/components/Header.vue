@@ -37,6 +37,10 @@ img {
   margin-left: 30px;
 }
 
+img:hover {
+  cursor: pointer;
+}
+
 ul {
   display: flex;
   justify-content:space-around ;
@@ -48,6 +52,7 @@ li{
   padding: 10px;
   margin:auto;
 }
+
 
 li>a{
     text-decoration: none;

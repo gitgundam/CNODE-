@@ -29,9 +29,7 @@
             ]"
             ><span>{{ item | itemType }}</span>
           </span>
-          <router-link :to="{name:'post_content',params:{
-            id:item.id 
-          }}">
+          <router-link :to="{name:'Article',params:{id:item.id}}">
           <span class="title">
             {{ item.title }}
           </span>
@@ -48,7 +46,7 @@ export default {
   name: "PostList",
   data() {
     return {
-      isLoading: false,
+      isLoading: 'false',
       items: [],
     };
   },
@@ -71,7 +69,7 @@ export default {
   },
   // 生命周期mount之前使用钩子
   beforeMount() {
-    this.isLoading = "true";
+    this.isLoading = true;
     this.getData();
   },
   filters: {
@@ -194,6 +192,7 @@ img {
 
 .title {
   font-size: 15px;
+  padding-left: 8px;
 }
 .last_reply {
   color: #778087;
