@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img src="@/assets/cnodejs_light.svg" alt="" />
+    <img src="@/assets/cnodejs_light.svg" @click="toIndex" />
     <ul>
       <li><a href="">首页</a></li>
       <li><a href="">新手入门</a></li>
@@ -18,7 +18,15 @@ export default {
   data() {
     return {};
   },
-  components: {},
+  methods:{
+    toIndex(){
+      if(this.$route.fullPath === '/'){
+        location.reload()
+      }else{
+        this.$router.push('/')
+        }
+    }
+  }
 };
 </script>
 

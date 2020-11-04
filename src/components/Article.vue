@@ -20,7 +20,7 @@
         <div class="reply_topbar">回复</div>
         <div v-for="(reply, index) in items.replies" :key="(reply, index)" class="reply_panel">
           <div class="reply_info">
-            <img :src="reply.author.avatar_url" @click="imgClick" />
+            <img :src="reply.author.avatar_url" @click="imgClick(reply)" />
             <span>{{ reply.author.loginname }}</span>
             <span>{{ index + 1 }}楼</span>
             <span v-if="reply.ups.length > 0"> 👍 {{ reply.ups.length }}</span>
@@ -46,11 +46,12 @@ export default {
     };
   },
   methods: {
-    imgClick(){
+    imgClick(reply){
+      console.log(reply)
       this.$router.push({
         name:'UserInfo',
         params:{
-          userid: this.items.author.loginname
+          userid: reply.author.loginname
         }
       })
     },
@@ -61,7 +62,6 @@ export default {
           if (res.data.success === true) {
             this.isLoading = false;
             this.items = res.data.data;
-            console.log(res);
           }
         })
         .catch((err) => console.log(err));

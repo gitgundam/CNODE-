@@ -13,7 +13,7 @@ export default new Router({
   routes: [
     {
       name:'PostList',
-      path:'',
+      path:'/',
       components: {
         main: PostList
       }
