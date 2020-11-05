@@ -29,34 +29,53 @@
             ]"
             ><span>{{ item | itemType }}</span>
           </span>
-          <router-link :to="{name:'Article',params:{id:item.id}}">
-          <span class="title">
-            {{ item.title }}
-          </span>
+          <router-link
+            :to="{
+              name: 'Article',
+              params: { id: item.id, userid: item.author.loginname },
+            }"
+          >
+            <span class="title">
+              {{ item.title }}
+            </span>
           </router-link>
           <span class="last_reply">{{ item | fromDate }}</span>
         </li>
+        <li><pagination :nowpage="nowpage" @change="handle"></pagination></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script >
+import pagination from "@/components/Pagination";
 export default {
   name: "PostList",
   data() {
     return {
-      isLoading: 'false',
+      isLoading: "false",
       items: [],
+      nowpage: 1,
     };
   },
+  components: {
+    pagination,
+  },
+  watch:{
+    'nowpage'(to,from){
+      this.getData()
+    }
+  },
   methods: {
+    handle(value){
+      this.nowpage = value
+    },
     getData() {
       this.$http
         .get("https://52.197.183.123/api/v1/topics", {
           params: {
-            page: 1,
-            limit: 10,
+            page: this.nowpage,
+            limit: 20,
           },
         })
         .then((res) => {
@@ -102,9 +121,9 @@ export default {
       } else if (time / 86400000 < 31) {
         return parseInt(time / 86400000) + "天前";
       } else if (time / 2592000000 < 12) {
-        return parseInt(time / 2592000000) + "月前";
-      } else {
-        return parseInt(time / 31104000000);
+        return parseInt(time / 2592000000) + "个月前";
+      }else{
+        return parseInt(time / 31104000000)+"年前"
       }
     },
   },
@@ -112,8 +131,8 @@ export default {
 </script>
 
 <style scoped>
-.postlist{
-  flex-grow : 1;
+.postlist {
+  flex-grow: 1;
 }
 .topbar span {
   padding: 0 10px;
@@ -202,15 +221,20 @@ img {
   font-size: 12px;
 }
 
-  a {
-    text-decoration: none;
-    color: black;
-  }
+a {
+  text-decoration: none;
+  color: black;
+}
 
-  a:hover {
-    text-decoration: underline;
-  }
-  
+a:hover {
+  text-decoration: underline;
+}
+
+ul li:last-child {
+  display: flex;
+  justify-content: center;
+}
+
 .loading {
   text-align: center;
   padding-top: 300px;

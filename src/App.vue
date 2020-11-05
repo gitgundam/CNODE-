@@ -2,9 +2,10 @@
   <div id="app">
     <Header></Header>
     <div class="main">
-      <!-- <PostList /> -->
-      <router-view name="main"></router-view>
+      <!-- <PostList /> -->      
       <router-view name="slidebar"></router-view>
+      <router-view name="main"></router-view>
+
     </div>
   </div>
 </template>
@@ -26,7 +27,5 @@ export default {
 .main {
   max-width: 80%;
   margin: 20px auto;
-  display: flex;
-  justify-content: center;
 }
 </style>

@@ -39,7 +39,7 @@ export default {
   name: "Article",
   data() {
     return {
-      isLoading: "faluse",
+      isLoading: "false",
       items: {
         // 代表当前页面所以内容
       },
@@ -105,14 +105,25 @@ export default {
       }
     },
   },
+  watch:{
+    '$route'(to,from){
+      this.getArticleData()
+    }
+  }
 };
 </script>
 
 <style>
 @import url("../assets/markdown-github.css");
 .article {
-  margin-right: 10px;
+  margin-right: 340px;;
 }
+  @media (max-width: 800px) {
+  .article {
+  margin: 0 auto;
+}
+  }
+
 .topic_header {
   background: white;
 }
