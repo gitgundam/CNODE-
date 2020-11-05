@@ -85,10 +85,10 @@ export default {
 </script>
 
 <style scoped>
-.info_main {
-  margin: 0 auto;
-  max-width: 75%;
+.userinfo {
+  flex-basis: 75%;
 }
+
 .info_main .info_name {
   background: white;
   padding: 12px;
@@ -134,4 +134,9 @@ export default {
   color:#094e99;
   font-size: .72rem;
 };
+
+.loading {
+  text-align: center;
+  padding-top: 300px;
+}
 </style>

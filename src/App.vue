@@ -4,6 +4,7 @@
     <div class="main">
       <!-- <PostList /> -->
       <router-view name="main"></router-view>
+      <router-view name="slidebar"></router-view>
     </div>
   </div>
 </template>
@@ -24,6 +25,8 @@ export default {
 <style >
 .main {
   max-width: 80%;
-  margin: 10px auto;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
 }
 </style>

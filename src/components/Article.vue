@@ -3,7 +3,7 @@
     <div class="loading" v-if="isLoading">
       <img src="@/assets/loading.gif" />
     </div>
-    <div v-else>
+    <div v-else class="article_main">
       <div class="topic_header">
         <div class="topic_title">
           <h2>{{ items.title }}</h2>
@@ -110,9 +110,10 @@ export default {
 
 <style>
 @import url("../assets/markdown-github.css");
-
+.article {
+  margin-right: 10px;
+}
 .topic_header {
-  max-width: 70%;
   background: white;
 }
 
@@ -158,7 +159,6 @@ export default {
 .topoc_reply {
   margin: 20px 0;
   background: white;
-  max-width: 70%;
 }
 .topoc_reply .reply_info {
   padding: 8px;

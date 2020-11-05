@@ -112,6 +112,9 @@ export default {
 </script>
 
 <style scoped>
+.postlist{
+  flex-grow : 1;
+}
 .topbar span {
   padding: 0 10px;
 }
