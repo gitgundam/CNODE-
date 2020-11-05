@@ -2,7 +2,8 @@
   <div class="pagination">
     <ul>
       <li @click="toIndex">首页</li>
-      <li @click="prePage">上一页</li>
+      <li v-if="currentPage === 1"> 上一页</li>
+      <li @click="prePage" v-else>上一页</li>
       <li
         v-for="page in pages"
         :key="page"
