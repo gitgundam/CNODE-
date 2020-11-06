@@ -2,7 +2,7 @@
 
 这是我使用 Vue.js写的,仿照CNODE社区的一个项目
 
-这是项目预览链接: [
+这是项目预览链接: [https://gitgundam.github.io/cnode/dist/index.html#
 ](https://gitgundam.github.io/cnode/dist/index.html#/)
 
 ## Build Setup
