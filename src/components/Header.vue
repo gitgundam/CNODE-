@@ -31,6 +31,7 @@ export default {
 </script>
 
 <style  scoped>
+
 .header {
   margin: 0;
   display: flex;
@@ -39,6 +40,18 @@ export default {
   justify-content: space-between;
   background: #63605f;
   height: 50px;
+}
+@media (max-width: 800px){
+  .header{
+    display:flex;
+    justify-content: center;
+  }
+  .header img{
+    display: none;
+  }
+  .header ul{
+    width: 100%;
+  }
 }
 img {
   max-width: 120px;

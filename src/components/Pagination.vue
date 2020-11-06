@@ -2,12 +2,12 @@
   <div class="pagination">
     <ul>
       <li @click="toIndex">首页</li>
-      <li v-if="currentPage === 1"> 上一页</li>
+      <li v-if="currentpage === 1">上一页</li>
       <li @click="prePage" v-else>上一页</li>
       <li
         v-for="page in pages"
         :key="page"
-        :class="[{currentPage:page == currentPage},'pagebtn']"
+        :class="[{ currentpage: page == currentpage }, 'pagebtn']"
         @click="changeBtn(page)"
       >
         {{ page }}
@@ -22,46 +22,47 @@ export default {
   name: "",
   data() {
     return {
-      pages: [1, 2, 3, 4,5],
+      pages: [1, 2, 3, 4, 5],
       target: this.nowpage,
-      currentPage:1
+      currentpage: 1,
     };
   },
 
   props: ["nowpage"],
   methods: {
-    prePage(){
-      this.currentPage--
-      if(this.currentPage == this.pages[0] && this.currentPage >1){
-      this.pages.unshift(this.pages[0]-1)
-      this.pages.splice(5,1)
-      console.log(this.pages)
-    }
+    prePage() {
+      this.currentpage--;
+      this.$emit("change", this.currentpage);
+      if (this.currentpage == this.pages[0] && this.currentpage > 1) {
+        this.pages.unshift(this.pages[0] - 1);
+        this.pages.splice(5, 1);
+        console.log(this.pages);
+      }
     },
-    nextPage(){
-      this.currentPage++
-      if(this.currentPage == this.pages[4]){
-      this.pages.shift()
-      this.pages.splice(4,0,this.pages[3]+1)
-    }
-    },
-    toIndex(){
-      location.reload()
-    },
-    changeBtn(page){
-      this.currentPage = page
-    if(page == this.pages[4]){
-      this.pages.shift()
-      this.pages.splice(4,0,this.pages[3]+1)
-      console.log(this.page)
-    }else if(page == this.pages[0] && page !=1){
-      this.pages.unshift(this.pages[0]-1)
-      this.pages.splice(5,1)
-    }
+    nextPage() {
+      this.currentpage++;
+      this.$emit("change", this.currentpage);
 
-  }
+      if (this.currentpage == this.pages[4]) {
+        this.pages.shift();
+        this.pages.splice(4, 0, this.pages[3] + 1);
+      }
+    },
+    toIndex() {
+      location.reload();
+    },
+    changeBtn(page) {
+      this.currentpage = page;
+      this.$emit("change", this.currentpage);
+      if (page == this.pages[4]) {
+        this.pages.shift();
+        this.pages.splice(4, 0, this.pages[3] + 1);
+      } else if (page == this.pages[0] && page != 1) {
+        this.pages.unshift(this.pages[0] - 1);
+        this.pages.splice(5, 1);
+      }
+    },
   },
-  
 };
 </script>
 
@@ -74,7 +75,7 @@ export default {
   background: #63605f;
   color: white;
 }
-.pagination ul .currentPage {
+.pagination ul .currentpage {
   background: #63605f;
   color: white;
 }

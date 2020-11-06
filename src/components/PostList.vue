@@ -41,7 +41,7 @@
           </router-link>
           <span class="last_reply">{{ item | fromDate }}</span>
         </li>
-        <li><pagination :nowpage="nowpage" @change="handle"></pagination></li>
+        <li class="pagination"><pagination @change="handle"></pagination></li>
       </ul>
     </div>
   </div>
@@ -61,14 +61,15 @@ export default {
   components: {
     pagination,
   },
-  watch:{
-    'nowpage'(to,from){
-      this.getData()
-    }
+  watch: {
+    nowpage(to, from) {
+      this.getData();
+    },
   },
   methods: {
-    handle(value){
-      this.nowpage = value
+    handle(value) {
+      console.log(value);
+      this.nowpage = value;
     },
     getData() {
       this.$http
@@ -122,8 +123,8 @@ export default {
         return parseInt(time / 86400000) + "天前";
       } else if (time / 2592000000 < 12) {
         return parseInt(time / 2592000000) + "个月前";
-      }else{
-        return parseInt(time / 31104000000)+"年前"
+      } else {
+        return parseInt(time / 31104000000) + "年前";
       }
     },
   },
@@ -143,6 +144,7 @@ ul {
   padding: 0;
 }
 li:first-child {
+  user-select: none;
   display: flex;
   align-items: center;
   list-style: none;
