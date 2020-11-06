@@ -18,7 +18,11 @@
       </div>
       <div class="topoc_reply">
         <div class="reply_topbar">回复</div>
-        <div v-for="(reply, index) in items.replies" :key="(reply, index)" class="reply_panel">
+        <div
+          v-for="(reply, index) in items.replies"
+          :key="(reply, index)"
+          class="reply_panel"
+        >
           <div class="reply_info">
             <img :src="reply.author.avatar_url" @click="imgClick(reply)" />
             <span>{{ reply.author.loginname }}</span>
@@ -46,14 +50,14 @@ export default {
     };
   },
   methods: {
-    imgClick(reply){
-      console.log(reply)
+    imgClick(reply) {
+      console.log(reply);
       this.$router.push({
-        name:'UserInfo',
-        params:{
-          userid: reply.author.loginname
-        }
-      })
+        name: "UserInfo",
+        params: {
+          userid: reply.author.loginname,
+        },
+      });
     },
     getArticleData() {
       this.$http
@@ -105,24 +109,24 @@ export default {
       }
     },
   },
-  watch:{
-    '$route'(to,from){
-      this.getArticleData()
-    }
-  }
+  watch: {
+    $route(to, from) {
+      this.getArticleData();
+    },
+  },
 };
 </script>
 
 <style>
 @import url("../assets/markdown-github.css");
 .article {
-  margin-right: 340px;;
+  margin-right: 340px;
 }
-  @media (max-width: 800px) {
+@media (max-width: 800px) {
   .article {
-  margin: 0 auto;
-}
+    margin: 0 auto;
   }
+}
 
 .topic_header {
   background: white;
@@ -192,21 +196,26 @@ export default {
 
 .reply_content {
   padding: 0 15px;
-
 }
 
-.reply_content a{
-color: #6d6d6d;
-text-decoration: none;
+.reply_content a {
+  color: #6d6d6d;
+  text-decoration: none;
 }
 
-
-.reply_panel{
+.reply_panel {
   border-bottom: 1px solid #e5e5e5;
 }
 .loading {
   text-align: center;
   padding-top: 300px;
+}
+
+.markdown-text img {
+  max-width: 100%;
+}
+.markdown-text .prettyprint {
+  overflow:scroll;
 }
 </style>
 
