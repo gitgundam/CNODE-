@@ -2,7 +2,10 @@
   <div class="slidebar" >
     <div class="authersummay">
       <div class="topbar">作者</div>
+      <div class="namepanel">
       <img :src="items.avatar_url" @click="toUserInfo">
+      <span class="authorname">{{items.loginname}}</span>
+      </div>
     </div>
     <div class="recent_topics">
       <div class="topbar">最近主题</div>
@@ -89,13 +92,21 @@ export default {
     background: white;
     margin-bottom: 10px;
   }
-
   .authersummay img{
     width: 48px;
     height: 48px;
-    padding: 10px;
     cursor: pointer;
   }
+ .namepanel{
+   padding: 10px;
+   display: flex;
+   justify-content: flex-start;
+   align-items:flex-end;
+ }
+
+.namepanel .authorname{
+  padding-left: 10px;
+}
 
 .slidebar ul{
   margin: 0;
