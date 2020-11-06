@@ -18,6 +18,11 @@
       </div>
       <div class="topoc_reply">
         <div class="reply_topbar">回复</div>
+        <div class="reply_panel" v-if ="items.replies.length === 0">
+          <div class="reply_content">
+            <p> 无回复</p>
+          </div>
+        </div>
         <div
           v-for="(reply, index) in items.replies"
           :key="(reply, index)"
@@ -64,6 +69,7 @@ export default {
         .get(`https://52.197.183.123/api/v1/topic/${this.$route.params.id}`)
         .then((res) => {
           if (res.data.success === true) {
+            console.log(res,1)
             this.isLoading = false;
             this.items = res.data.data;
           }
