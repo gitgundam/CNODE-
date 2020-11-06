@@ -1,24 +1,32 @@
-# vue-cnode
+### Vue.js 技术栈搭建的CNODE社区
+# 演示
 
-这是我使用 Vue.js写的,仿照CNODE社区的一个项目
+>演示地址[https://gitgundam.github.io/cnode/dist/index.html#](https://gitgundam.github.io/cnode/dist/index.html#/)
 
-这是项目预览链接: [https://gitgundam.github.io/cnode/dist/index.html#
-](https://gitgundam.github.io/cnode/dist/index.html#/)
+### 主页
 
-## Build Setup
+![gitgundam.github.io_cnode_dist_index.html _1_.png](https://i.loli.net/2020/11/06/at4UCeTEh1m9VlA.png)
+
+### 文章页面
+
+![gitgundam.github.io_cnode_dist_index.html _4_.png](https://i.loli.net/2020/11/06/GRPidIMLgTkXSf2.png)
+
+### 用户信息页面
+
+![gitgundam.github.io_cnode_dist_index.html _5_.png](https://i.loli.net/2020/11/06/kydfj9TCFXulbqv.png)
+
+
+
+## 使用说明
 
 ``` bash
-# install dependencies
+# 安装npm依赖
 npm install
-
-# serve with hot reload at localhost:8080
+ 
+# 进入开发环境 serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
+# 将源码打包 build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
