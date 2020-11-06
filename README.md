@@ -1,6 +1,6 @@
 # vue-cnode
 
-> A Vue.js project
+这是我使用 Vue.js写的,仿照CNODE社区的一个项目
 
 ## Build Setup
 
