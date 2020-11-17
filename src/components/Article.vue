@@ -56,7 +56,6 @@ export default {
   },
   methods: {
     imgClick(reply) {
-      console.log(reply);
       this.$router.push({
         name: "UserInfo",
         params: {
@@ -66,7 +65,7 @@ export default {
     },
     getArticleData() {
       this.$http
-        .get(`https://52.197.183.123/api/v1/topic/${this.$route.params.id}`)
+        .get(`http://mock.hunger-valley.com/cnode/api/v1/topic/${this.$route.params.id}`)
         .then((res) => {
           if (res.data.success === true) {
             console.log(res,1)

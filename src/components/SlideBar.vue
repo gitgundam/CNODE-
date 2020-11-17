@@ -50,7 +50,7 @@ export default {
     },
     getSlideBarData(){
       this.$http
-        .get(`https://52.197.183.123/api/v1/user/${this.$route.params.userid}`)
+        .get(`http://mock.hunger-valley.com/cnode/api/v1/user/${this.$route.params.userid}`)
         .then((res) => {
           if (res.data.success === true) {
             this.items = res.data.data;

@@ -73,7 +73,7 @@ export default {
     },
     getData() {
       this.$http
-        .get("https://52.197.183.123/api/v1/topics", {
+        .get("http://mock.hunger-valley.com/cnode/api/v1/topics", {
           params: {
             page: this.nowpage,
             limit: 20,
