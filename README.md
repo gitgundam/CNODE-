@@ -1,7 +1,7 @@
 ### Vue.js 技术栈搭建的CNODE社区
 # 演示
 
->演示地址[https://gitgundam.github.io/cnode/dist/index.html#](https://gitgundam.github.io/cnode/dist/index.html#/)
+>演示地址[http://gitgundam.gitee.io/cnode/dist/index.html#](http://gitgundam.gitee.io/cnode/dist/index.html#/)
 
 11.17日修改..因为cnode api挂掉了,现在更换了一个mock随机数据的api
 
